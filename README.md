@@ -62,7 +62,9 @@ region $j$ at time $t$.
   
 - We assume that a company can have an economic activity in several regions, and then emit $CO_{2}$
 with different costs. Hence company’s total carbon cost $CC$ is:  
-$CC(i,k,t) = \sum_{j \in \mathcal{M}}Scope_{1}(i,j,t)CP(j,k,t)$  
+$$
+CC(i,k,t) = \sum_{j \in \mathcal{M}}Scope_{1}(i,j,t)CP(j,k,t)
+$$  
 where k is the considered scenario.  
   
 - The shock to EBITDA for a particular scenario k is now defined, this is the ratio of $CC$ with
