@@ -62,12 +62,12 @@ region $j$ at time $t$.
   
 - We assume that a company can have an economic activity in several regions, and then emit $CO_{2}$
 with different costs. Hence company’s total carbon cost $CC$ is:  
-$ CC(i,k,t) = \sum_{j \in \mathcal{M}}Scope_{1}(i,j,t)CP(j,k,t) $  
+$CC(i,k,t) = \sum_{j \in \mathcal{M}}Scope_{1}(i,j,t)CP(j,k,t)$  
 where k is the considered scenario.  
   
 - The shock to EBITDA for a particular scenario k is now defined, this is the ratio of $CC$ with
-respect to the EBITDA.
-$ \xi(i,k,t) = \frac{CC(i,k,t)}{EBITDA(i,k=0,t=0)} $  
+respect to the EBITDA.  
+$\xi(i,k,t) = \frac{CC(i,k,t)}{EBITDA(i,k=0,t=0)}$  
 Intuitively, this ratio measures the impact of the $CC$ on the firm activity and allows to define a
 metric in order to compare different firms, producing in different regions.  
   
@@ -75,36 +75,36 @@ metric in order to compare different firms, producing in different regions.
 EBITDA on total asset value $V$ is computed using an approach that relies on the assumption
 that the financial ratio between the enterprise value and the EBITDA remains constant over
 time.  
-$ V (i, t) = R_{i} × EBITDA(i, t) $  
+$V (i, t) = R_{i} × EBITDA(i, t)$  
 where $R_{i}$ is a constant financial neutral ratio. The assumption is that $R_{i}$ is stable over time for
 each company. This assumption seems restrictive but is verified by the study.  
   
 - In order to integrate the shock to EBITDA in the firms valuation we define it as the ”carbon-
 neutral”:  
-$ V(i,k,t) =  (1-\xi(i,k,t))V(i,k=0,t=0) $  
+$V(i,k,t) =  (1-\xi(i,k,t))V(i,k=0,t=0)$  
   
 This modelization allows to overcome the geographical issue presented before in (Patrascu & al., [2017](https://www.cazenovecapital.com/sysglobalassets/digital/insights/2018/sustainability/2017-09-climate-change---redefining-the-risks-carbon-var.pdf)). Each regions considered has its own specificities and mechanisms. In our model we add restrictive hypothesis to present a general model that can be calibrated to each region. Indeed, each region presents a carbon price denoted _CP_ for each time $t$ and for each scenarios $k$.
   
 As we saw in the introduction, the main goal of the paper is to predict the probabilities of default
 of a company, in different scenarios.  
 In a first instance let us define the diffusion of asset’s value in Merton model:  
-$ \frac{dV_{t}}{V_{t}} = rdt + \sigma dW_{t}$  
-where $\{\{W_{t}, \for t \geq 0 }\}$ is a standard Brownian motion under the risk neutral probability, and r the risk free-rate.  
+$\frac{dV_{t}}{V_{t}} = rdt + \sigma dW_{t}$  
+where \{$W_{t}$, $\for t \geq 0$ \} is a standard Brownian motion under the risk neutral probability, and r the risk free-rate.  
   
-In Merton's model, under the risk-neutral probability, the equity value at time $t$ is equal to the expected discounted cash flows of the shareholders. Hence, the value of the equity is equal to the price of call on the firm assets of maturity T and strike D. We get the following formula: 
-$ E(i) = V(i)\phi(d_{1})-D(i)\exp(-rT)\phi(d_{2}) $  
+In Merton's model, under the risk-neutral probability, the equity value at time $t$ is equal to the expected discounted cash flows of the shareholders. Hence, the value of the equity is equal to the price of call on the firm assets of maturity T and strike D. We get the following formula:  
+$E(i) = V(i)\phi(d_{1})-D(i)\exp(-rT)\phi(d_{2})$  
 using Black-Scholes formula, where $\phi$ is the cumulative normal distribution function and :  
-$ d_{1} &= \frac{\ln({\frac{V(i)}{D(i)}})+(r+\frac{\sigma_{V}(i)^{2}}{2})T)}{\sigma_{V}(i)\sqrt(T)} $
-$ d_{2} &= d_{1} - \sigma_{V}(i)\sqrt{T} $  
+$d_{1} &= \frac{\ln({\frac{V(i)}{D(i)}})+(r+\frac{\sigma_{V}(i)^{2}}{2})T)}{\sigma_{V}(i)\sqrt(T)}$  
+$d_{2} &= d_{1} - \sigma_{V}(i)\sqrt{T}$  
   
 The initial total asset value $V (i, k = 0, t = 0)$ of the company $i$ and total asset volatility $\sigma(i)$, which are not observable, are determined by resolving the following system.  
-$ E(i) &= V(i)\phi(d_{1})-D(i)\exp(-rT)phi(d_{2}) $  
-$ E(i) &= \frac{\sigma_{V}(i)}{\sigma_{V}(i)}\phi(d_{1})V(i) $
+$E(i) &= V(i)\phi(d_{1})-D(i)\exp(-rT)phi(d_{2})$  
+$E(i) &= \frac{\sigma_{V}(i)}{\sigma_{V}(i)}\phi(d_{1})V(i)$
 
 In this paper, the system is resolved in order to determine initial values for $V$ ($i$, $k = 0$, $t = 0$) and $\sigma_{V}(i)$ and is independent of scenario $k$ and future date $t$.
 
 In the Merton model the default occurs when the firm’s (assets) value falls below the nominal of its debt.  
 After solving the system, we can compute the distance to probability of default. Following Merton's model framework:  
-$ PD = \mathcal{Q}(V_{T} \le D) = \phi(-d_{1}(i,k,t)) $  
+$PD = \mathcal{Q}(V_{T} \le D) = \phi(-d_{1}(i,k,t))$  
   
 where $d_{1}(i,k,t) = d_{1} = \frac{\ln({\frac{V(i,k,t)}{D(i)}})+(r+\frac{\sigma_{V}(i)^{2}}{2})T)}{\sigma_{V}(i)\sqrt(T)}$ and represents $d_{1}$ of the classical Black-Scholes formula adapted to the model. We integrate the shock to EBITDA and parametrize for each region, and in time.  
