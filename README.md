@@ -37,9 +37,8 @@ It is important to notice that there is a difference between the Social Cost of 
 Cost. The SCC can be defined as the amount of GHG that should be taxed in order to maximize
 welfare and the effective cost is related to local regulations.
 
-![Fig1](carbon_price.png)  
-
-<p align=center> <i> Evolution of the effective carbon price with respect to CO2 emissions </i> </p>
+<p align=center> <img src="carbon_price.png" /> <br>
+<i> Evolution of the effective carbon price with respect to CO2 emissions </i> </p>
 
 The authors have studied carbon price impact among long-term and medium-term. To get the
 most effective carbon price according to these horizon they took the SCC to compute the medium-
@@ -151,12 +150,11 @@ where $d_{1}(i,k,t) = d_{1} = \frac{\ln({\frac{V(i,k,t)}{D(i)}})+(r+\frac{\sigma
 
 The model presented in the paper does not take into account physical risk. Indeed, climate change will have huge impact on companies and especially on their physical assets and on their production. According to GIEC reports a lot of regions will be strongly impacted by natural disasters.  
 
-![Fig2](montee_des_eaux.png)  
+<p align=center> <img src="montee_des_eaux.png" /> <br>
+<i> Highly impacted regions in Europe by rise of water-levels </i> </p>
 
-<p align=center> <i> Highly impacted regions in Europe by rise of water-levels </i> </p>
-
-This map shows that northern Europe is a risky region in terms of physical risks. Highly industrialized firms located in this region are exposed to an important risk due to the possible rise of water-levels. As it is just one of the way the industry will be impacted, we want to incorporate this physical impact in the paper's model. We propose to add a Poisson component in the diffusion of the firm's value of Merton's model. We suppose that each time a climate event occurs a fraction $\gamma$ of asset's value is lost. We assume that the occurrence of climate events is an independent Poisson process with parameter $\lambda_{t}$.
-V follows a new stochastic differential equation:  
+This map shows that northern Europe is a risky region in terms of physical risks. Highly industrialized firms located in this region are exposed to an important risk due to the possible rise of water-levels. As it is just one of the way the industry will be impacted, we want to incorporate this physical impact in the paper's model. We propose to add a Poisson component in the diffusion of the firm's value of Merton's model. We suppose that each time a climate event occurs a fraction $\gamma$ of asset's value is lost. We assume that the occurrence of climate events is an independent Poisson process with parameter $\lambda_{t}$.  
+$V$ follows a new stochastic differential equation:  
 
 $$  
 \frac{dV_{t}}{V_{t}} = (r+\gamma_{t}\lambda_{t}) V_{t}d_{t} + \sigma V_{t} dW_{t} - \gamma_{t} V_{t} dN_{t}  
@@ -167,19 +165,26 @@ This SDE can interpreted as follows: the term $\gamma_{t}\lambda_{t}$  in the dr
 By using Ito lemma for jump processes on $ln(V_{t})$ we get:  
   
 $$  
-V_{t}=V_{0}exp((r+\gamma\lambda+\frac{\sigma^2}{2})t+\sigma W_{t}+N_{t}ln(1-\gamma))  
+V_{t}=V_{0}\exp((r+\gamma\lambda+\frac{\sigma^2}{2})t+\sigma W_{t}+N_{t}ln(1-\gamma))  
 $$  
   
 The assumption can be made that $N_{t}ln(1-\gamma)$ behave like a gaussian random variable independent of $W_{t}$ of mean $E(N_{t}ln(1-\gamma))=t\lambda ln(1-\gamma)$ and variance $Var(N_{t}ln(1-\gamma))=ln(1-\gamma)^2 \lambda t$. It then yields:  
   
 $$  
-V_{t}=V_{0}exp((r+(\gamma+ln(1-\gamma))\lambda+\frac{\sigma^2}{2})t+\sqrt{\sigma^2 t + ln(1-\gamma)^2 \lambda t } G)  
+V_{t}=V_{0}\exp((r+(\gamma+ln(1-\gamma))\lambda+\frac{\sigma^2}{2})t+\sqrt{\sigma^2 t + ln(1-\gamma)^2 \lambda t } G)  
 $$  
   
-where $G \xrightarrow[]{} N(0,1)$. It yields for the probability of default:  
+where $G \sim \mathcal{N}(0,1)$. It yields for the probability of default:  
   
 $$  
 PD=\phi(\frac{ln(\frac{D}{V_{0}}-a)}{b})  
 $$  
   
  where $a=(r+(\gamma+ln(1-\gamma))\lambda+\frac{\sigma^2}{2})t$ and $b=\sqrt{\sigma^2 t + ln(1-\gamma)^2 \lambda t }$
+ 
+## Project
+
+Graphics are plotted from the dataset : https://data.ene.iiasa.ac.at/iamc-1.5c-explorer//workspaces.
+We show the evolution of probability of default compared to time horizon in different model. In order to
+simplify our results, we choose to express the probability of default in the general context so the plots
+are showing the mean PD among all the 795 companies.
