@@ -129,7 +129,7 @@ $$
 The initial total asset value $V (i, k = 0, t = 0)$ of the company $i$ and total asset volatility $\sigma(i)$, which are not observable, are determined by resolving the following system.  
       
 $$  
-E(i) = V(i)\phi(d_{1})-D(i)\exp(-rT)phi(d_{2})  
+E(i) = V(i)\phi(d_{1})-D(i)\exp(-rT)phi(d_{2})  \\
 E(i) = \frac{\sigma_{V}(i)}{\sigma_{V}(i)}\phi(d_{1})V(i)
 $$  
     
