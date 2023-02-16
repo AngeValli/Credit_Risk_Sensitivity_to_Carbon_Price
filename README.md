@@ -89,17 +89,17 @@ As we saw in the introduction, the main goal of the paper is to predict the prob
 of a company, in different scenarios.  
 In a first instance let us define the diffusion of asset’s value in Merton model:  
 $\frac{dV_{t}}{V_{t}} = rdt + \sigma dW_{t}$  
-where \{$W_{t}$, $\for t \geq 0$ \} is a standard Brownian motion under the risk neutral probability, and r the risk free-rate.  
+where \{ $W_{t}$ , $t \geq 0$ \} is a standard Brownian motion under the risk neutral probability, and r the risk free-rate.  
   
 In Merton's model, under the risk-neutral probability, the equity value at time $t$ is equal to the expected discounted cash flows of the shareholders. Hence, the value of the equity is equal to the price of call on the firm assets of maturity T and strike D. We get the following formula:  
 $E(i) = V(i)\phi(d_{1})-D(i)\exp(-rT)\phi(d_{2})$  
 using Black-Scholes formula, where $\phi$ is the cumulative normal distribution function and :  
-$d_{1} &= \frac{\ln({\frac{V(i)}{D(i)}})+(r+\frac{\sigma_{V}(i)^{2}}{2})T)}{\sigma_{V}(i)\sqrt(T)}$  
-$d_{2} &= d_{1} - \sigma_{V}(i)\sqrt{T}$  
+$d_{1} = \frac{\ln({\frac{V(i)}{D(i)}})+(r+\frac{\sigma_{V}(i)^{2}}{2})T)}{\sigma_{V}(i)\sqrt(T)}$  
+$d_{2} = d_{1} - \sigma_{V}(i)\sqrt{T}$  
   
 The initial total asset value $V (i, k = 0, t = 0)$ of the company $i$ and total asset volatility $\sigma(i)$, which are not observable, are determined by resolving the following system.  
-$E(i) &= V(i)\phi(d_{1})-D(i)\exp(-rT)phi(d_{2})$  
-$E(i) &= \frac{\sigma_{V}(i)}{\sigma_{V}(i)}\phi(d_{1})V(i)$
+$E(i) = V(i)\phi(d_{1})-D(i)\exp(-rT)phi(d_{2})$  
+$E(i) = \frac{\sigma_{V}(i)}{\sigma_{V}(i)}\phi(d_{1})V(i)$
 
 In this paper, the system is resolved in order to determine initial values for $V$ ($i$, $k = 0$, $t = 0$) and $\sigma_{V}(i)$ and is independent of scenario $k$ and future date $t$.
 
